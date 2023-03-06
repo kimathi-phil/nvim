@@ -33,6 +33,15 @@ return require('packer').startup(function(use)
         end
     })
 
+    use({
+        "Pocco81/auto-save.nvim",
+        config = function()
+            require("auto-save").setup {
+                -- your config goes here
+                -- or just leave it empty :)
+            }
+        end,
+    })
 
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     use("nvim-treesitter/playground")
@@ -65,9 +74,13 @@ return require('packer').startup(function(use)
         }
     }
 
+    use {
+        'stevearc/aerial.nvim',
+        config = function() require('aerial').setup() end
+    }
+
     use("folke/zen-mode.nvim")
-    use("github/copilot.vim")
     use("eandrju/cellular-automaton.nvim")
     use("laytan/cloak.nvim")
-    use ('wakatime/vim-wakatime')
+    use('wakatime/vim-wakatime')
 end)
