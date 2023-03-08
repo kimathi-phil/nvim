@@ -45,11 +45,14 @@ return require('packer').startup(function(use)
 
    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
    use("nvim-treesitter/playground")
+   use("dart-lang/dart-vim-plugin")
    use("theprimeagen/harpoon")
    use("theprimeagen/refactoring.nvim")
    use("mbbill/undotree")
    use("tpope/vim-fugitive")
    use("nvim-treesitter/nvim-treesitter-context");
+   use("windwp/nvim-autopairs")
+   use("kovetskiy/neovim-move")
 
    use {
       'VonHeikemen/lsp-zero.nvim',
