@@ -43,17 +43,6 @@ return require('packer').startup(function(use)
       end,
    })
 
-   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-   use("nvim-treesitter/playground")
-   use("dart-lang/dart-vim-plugin")
-   use("theprimeagen/harpoon")
-   use("theprimeagen/refactoring.nvim")
-   use("mbbill/undotree")
-   use("tpope/vim-fugitive")
-   use("nvim-treesitter/nvim-treesitter-context");
-   use("windwp/nvim-autopairs")
-   use("kovetskiy/neovim-move")
-
    use {
       'VonHeikemen/lsp-zero.nvim',
       branch = 'v1.x',
@@ -89,6 +78,34 @@ return require('packer').startup(function(use)
       end
    }
 
+   use {
+      'gelguy/wilder.nvim',
+      config = function()
+         local wilder = require "wilder"
+         wilder.setup { modes = { ":", "/", "?" } }
+         wilder.set_option(
+            "renderer",
+            wilder.popupmenu_renderer {
+               highlighter = wilder.basic_highlighter(),
+               left = { " ", wilder.popupmenu_devicons() },
+               right = { " ", wilder.popupmenu_scrollbar() },
+            }
+         )
+      end
+   }
+
+   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+   use("nvim-treesitter/playground")
+   use("dart-lang/dart-vim-plugin")
+   use("theprimeagen/harpoon")
+   use("theprimeagen/refactoring.nvim")
+   use("mbbill/undotree")
+   use("tpope/vim-fugitive")
+   use("vim-airline/vim-airline")
+   use("nvim-treesitter/nvim-treesitter-context")
+   use("windwp/nvim-autopairs")
+   use("kovetskiy/neovim-move")
+   use("RRethy/vim-illuminate")
    use("folke/zen-mode.nvim")
    use("eandrju/cellular-automaton.nvim")
    use("laytan/cloak.nvim")
