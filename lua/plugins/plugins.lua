@@ -31,13 +31,16 @@ return {
 
   {
     "akinsho/flutter-tools.nvim",
-    lazy = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "stevearc/dressing.nvim", -- optional for vim.ui.select
-    },
+    cmd = "FlutterDevices",
+    keys = { { "<leader>cF", "<cmd>FlutterDevices<cr>", desc = "Flutter Devices" } },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("config.flutter").setup()
+    end,
   },
+
   { "wakatime/vim-wakatime" },
+  { "mfussenegger/nvim-dap" },
   { "theprimeagen/harpoon" },
   { "theprimeagen/refactoring.nvim" },
 }
