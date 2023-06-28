@@ -30,6 +30,7 @@ return {
         },
         tailwindcss = {},
         prismals = {},
+        zls = {},
       },
       setup = {
         tsserver = function(_, opts)
@@ -70,4 +71,5 @@ return {
     end,
   },
   { "prisma/vim-prisma" },
+  { "ziglang/zig.vim" },
 }
