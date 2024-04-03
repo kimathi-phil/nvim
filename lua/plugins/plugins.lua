@@ -4,20 +4,20 @@ return {
     version = false, -- last release is way too oldfiles
   },
 
-  {
-    "nvimtools/none-ls.nvim",
-    opts = function(_, opts)
-      table.insert(opts.sources, require("typescript.extensions.null-ls.code-actions"))
-    end,
-  },
-
-  {
-    "nvimtools/none-ls.nvim",
-    opts = function(_, opts)
-      local nls = require("null-ls")
-      table.insert(opts.sources, nls.builtins.formatting.prettierd)
-    end,
-  },
+  -- {
+  --   "nvimtools/none-ls.nvim",
+  --   opts = function(_, opts)
+  --     table.insert(opts.sources, require("typescript.extensions.null-ls.code-actions"))
+  --   end,
+  -- },
+  --
+  -- {
+  --   "nvimtools/none-ls.nvim",
+  --   opts = function(_, opts)
+  --     local nls = require("null-ls")
+  --     table.insert(opts.sources, nls.builtins.formatting.prettierd)
+  --   end,
+  -- },
 
   {
     "simrat39/symbols-outline.nvim",
@@ -37,4 +37,5 @@ return {
   { "wakatime/vim-wakatime" },
   { "theprimeagen/harpoon" },
   { "theprimeagen/refactoring.nvim" },
+  { "nvim-neotest/nvim-nio" },
 }
